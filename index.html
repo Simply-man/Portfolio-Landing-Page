@@ -8,16 +8,17 @@
     <title>Portfolio Maciej Kędziora</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/dist/style.css">
-    <link rel="stylesheet" href="/dist/style2.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
-<body>
-    <div id="progressbar"></div>
-    <div id="scrollPath"></div>
+<body id="HOME">
     <video class="" autoplay muted loop id="video">
         <source src="/images/background.mp4" type="video/mp4">
     </video>
@@ -29,16 +30,7 @@
                 <div class="bun bottom"></div>
             </div>
         </div>
-        <!-- <nav class="mobile">
-            <img src="/images/name.png" class='logo'>
-            <ul>
-                <li><a href="#HOME">Home</a></li>
-                <li class="green"><a href="#PROJECTS">Projects</a></li>
-                <li class="red"><a href="#SKILLS">Skills</a></li>
-                <li class="yellow"><a href="#ABOUT ME">About</a></li>
-                <li class="purple"><a href="#CONTACT">Contact</a></li>
-            </ul>
-        </nav> -->
+        </nav>
         <nav class="mobile">
             <img src="/images/name.png" class='logo'>
             <ul>
@@ -50,63 +42,174 @@
             </ul>
         </nav>
         <section class="info">
-            <div class="content">
+            <div class="front">
                 <img src="/images/triangle.png">
                 <h1 id="txt"></h1>
             </div>
         </section>
     </header>
-    <main>
-        <section class="projects">
-            <div id="container">
-                <div class="center">
-                    <h1 class="el-st">{projects}</h1>
+    <section id="PROJECTS" class="projects">
+        <div id="container">
+            <div class="center">
+                <h1 class="el-st">{projects}</h1>
+            </div>
+        </div>
+        <div class="projectcard">
+            <div class="page-content">
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">Arduino</h2>
+                        <p class="copy">Weather Station with RTC and move detector</p>
+                        <a target="blank" href="https://github.com/Mac-lucky/Arduino-RTC-with-Temperature"><button
+                                class="btn">GitHub</button></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">Portfolio</h2>
+                        <p class="copy">Freelance project website with cooperation with a client</p>
+                        <div class="twobut">
+                            <a target="blank" href="https://github.com/Mac-lucky/UX-UI-site"><button
+                                    class="btn">GitHub</button></a>
+                            <a target="blank" href="https://wsawicka.com"><button class="btn">Demo</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">Database</h2>
+                        <p class="copy">Python program to view updated daily COVID-19 cases stored in SQLite3 database</p><a target="blank"
+                            href="https://github.com/Mac-lucky/COVID-19-daily-database-with-SQLite3"><button class="btn">GitHub</button></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">FPGA</h2>
+                        <p class="copy">Project made in Vivado using VHDL programmed to be used on Spartan 6</p><a
+                            target="blank"
+                            href="https://github.com/Mac-lucky/Vivado-VHDL-RTC-using-I2C-Master-Slave"><button
+                                class="btn">GitHub</button></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">Mapping</h2>
+                        <p class="copy">Page that was based on mockups, that I tried to recreate as website</p>
+                        <div class="twobut">
+                            <a target="blank" href="https://github.com/Mac-lucky/DesignPage"><button
+                                    class="btn">GitHub</button></a>
+                            <a target="blank" href="https://designpage.netlify.app/"><button
+                                    class="btn">Demo</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">STM32 ARM</h2>
+                        <p class="copy">ARM Cortex-M3 with ultrasonic range detector and LCD</p><a target="blank"
+                            href="https://github.com/Mac-lucky/STM32-HC-SR04-USART-timer-pulse-width"><button
+                                class="btn">GitHub</button></a>
+                    </div>
                 </div>
             </div>
-            <div class="projectscards">
-                <div class="boxwrap">
-                    <div class="box">
-                        <div class="imgBx">
-                            <img src="/images/arduino.jpg">
-                        </div>
-                        <div class="content">
-                            <h2>Arduino<br><span>Weather Station with RTC and<br>move detector</span></h2>
-                        </div>
-                    </div>
+        </div>
+    </section>
+    <section id="SKILLS" class="skills">
+        <div class="wrapper">
+            <div class="neon-wrapper">
+                <span class="txt">SKILLS</span>
+                <span class="gradient"></span>
+                <span class="dodge"></span>
+            </div>
+        </div>
+        <div class="allskills">
+            <div class="left">
+                <h1 data-aos="fade-down">HTML, CSS, Javascript</h1>
+                <img data-aos="fade-up" src="/images/violet.png">
+            </div>
+            <div class="right">
+                <h1 data-aos="fade-down">React, Python</h1>
+                <img data-aos="fade-up" src="/images/red.png">
+            </div>
+            <div class="left">
+                <h1 data-aos="fade-down">C, C++, git, Jira</h1>
+                <img data-aos="fade-up" src="/images/violet.png">
+            </div>
+            <div class="right">
+                <h1 data-aos="fade-down">VHDL, Matlab</h1>
+                <img data-aos="fade-up" src="/images/red.png">
+            </div>
+        </div>
+    </section>
+    <section id="ABOUT ME" class="aboutme">
+        <div class="width">
+            <h1 data-aos="fade-right">{about me}</h1>
+            <div class="flex">
+                <div class="imageover">
+                    <img data-aos="fade-down" class="plat" src="/images/plat.jpg">
                 </div>
-                <div class="boxwrap">
-                    <div class="box">
-                        <div class="imgBx">
-                            <img src="/images/database.jpg">
-                        </div>
-                        <div class="content">
-                            <h2>Arduino<br><span>Weather Station with RTC and<br>move detector</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="boxwrap">
-                    <div class="box">
-                        <div class="imgBx">
-                            <img src="/images/music.png">
-                        </div>
-                        <div class="content">
-                            <h2>Arduino<br><span>Weather Station with RTC and<br>move detector</span></h2>
-                        </div>
-                    </div>
+                <div class="abouttext">
+                    <p data-aos="fade-up">Hi! My name is Maciej Kędziora. I’m a student of the faculty of
+                        <b>Microsystems</b> and Photonics
+                        at Wrocław University of Science and Technology. My specialization is <b>Digital
+                            Electronics</b>.
+                        During my studies, I was <b>working</b> on databases, FPGAs, ARM and AVR microprocessors.</p>
+                    <p data-aos="fade-up" data-aos-delay="70">I’m really into <b>web programming</b> and that's why
+                        I joined to CodersCrew - non-profit
+                        organization operating in Wrocław. There I can work on <b>real-life</b> projects and learn from
+                        more
+                        experienced people.</p>
+                    <p data-aos="fade-up" data-aos-delay="70">I am a technology lover, I am eager to discover and
+                        learn new things, and I <b>pursue my
+                            goals</b> with great persistence.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <footer id="CONTACT" class="contact">
+        <div class="width">
+            <h1 data-aos="fade-up-right">{contact}</h1>
+            <p data-aos="zoom-in">You can find me online in many places..</p>
+            <div class="icons">
+                <div id="delay" data-aos="zoom-out" data-aos-delay="0" class="icontext">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Wroclaw, PL</p>
+                </div>
+                <a id="Copy" href="javascript:void(0)">
+                    <div id="delay" data-aos="zoom-out" data-aos-delay="50" class="icontext">
+                        <i class="far fa-envelope"></i>
+                        <p>Click Me</p>
+                    </div>
+                </a>
+                <div id="delay" data-aos="zoom-out" data-aos-delay="100" class="icontext">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>665 622 435</p>
+                </div>
+                <a href="https://github.com/Mac-lucky" target="blank">
+                    <div id="delay" data-aos="zoom-out" data-aos-delay="150" class="icontext">
+                        <i class="fab fa-github"></i>
+                        <p>Mac-lucky</p>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/debiczydaj" target="blank">
+                    <div id="delay" data-aos="zoom-out" data-aos-delay="200" class="icontext">
+                        <i class="fab fa-instagram"></i>
+                        <p>debiczydaj</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <p class="bottomtext">© 2020 Maciej Kędziora Projects</p>
+    </footer>
     </main>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
     <script src="hamburger.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1200
-        });
+        AOS.init();
     </script>
 
 </body>

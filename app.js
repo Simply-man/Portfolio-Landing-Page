@@ -10,167 +10,172 @@ var typewriter = new Typewriter(txt, {
 
 
 typewriter
-  .pauseFor(500)
-  .typeString('Hi, my name is<br><span style="color: #f5c708;">Maciej Ked</span>')
-  .pauseFor(100)
-  .deleteChars(3)
-  .typeString('<span style="color: #f5c708;">Kędziora</span><br>I program websites &<br>microcontrollers')
-  .start();
+    .pauseFor(500)
+    .typeString('Hi, my name is<br><span style="color: #f5c708;">Maciej Ked</span>')
+    .pauseFor(100)
+    .deleteChars(3)
+    .typeString('<span style="color: #f5c708;">Kędziora</span><br>I program websites &<br>microcontrollers')
+    .start();
 
 /*fade out video on scroll*/
 
 let video = document.querySelector('video');
-window.addEventListener('scroll', function(){
-    let value = 1 + window.scrollY/ -400;
+window.addEventListener('scroll', function () {
+    let value = 1 + window.scrollY / -400;
     video.style.opacity = value;
 })
 
 
 /* project string glitch effect*/
 
-var stringRandom = (function() {
+var stringRandom = (function () {
 
-  var data = {
-      isScrolling : false,
-      repeat : 0,
-      target : [],
-      letters : '*+-/@_$[%£!XO1&>',
-      originalStrings : '',
-      singleLetters : []
-  }
+    var data = {
+        isScrolling: false,
+        repeat: 0,
+        target: [],
+        letters: '*+-/@_$[%£!XO1&>',
+        originalStrings: '',
+        singleLetters: []
+    }
 
-  Array.prototype.shuffle = function() {
-      var input = this;
-       
-      for (var i = input.length-1; i >=0; i--) {
-       
-          var randomIndex = Math.floor(Math.random()*(i+1)); 
-          var itemAtIndex = input[randomIndex]; 
-           
-          input[randomIndex] = input[i]; 
-          input[i] = itemAtIndex;
-      }
-      return input;
-  }
+    Array.prototype.shuffle = function () {
+        var input = this;
 
-  function checkLength(x) {
-      return Array.from(document.querySelectorAll(x)).length > 0;
-  }
+        for (var i = input.length - 1; i >= 0; i--) {
 
-  function addListener(evt, fx) {
-      window.addEventListener(evt, fx);    
-  }
+            var randomIndex = Math.floor(Math.random() * (i + 1));
+            var itemAtIndex = input[randomIndex];
 
-  function changeLetter(letter) {
-      if(letter.textContent != ' ') {
-          letter.classList.add('is-changing');
-          letter.style.animationDuration = Math.random().toFixed(2) + 's';
-          
-          var newChar = data.letters.substr( Math.random() * data.letters.length, 1);
+            input[randomIndex] = input[i];
+            input[i] = itemAtIndex;
+        }
+        return input;
+    }
 
-          letter.textContent = newChar;
-          letter.setAttribute('data-txt', newChar);
-      }
-  }
+    function checkLength(x) {
+        return Array.from(document.querySelectorAll(x)).length > 0;
+    }
 
-  function resetLetter(letter, value) {
-          letter.classList.remove('is-changing');
-          letter.textContent = value;
-          letter.setAttribute('data-txt', value);
-  }
+    function addListener(evt, fx) {
+        window.addEventListener(evt, fx);
+    }
+
+    function changeLetter(letter) {
+        if (letter.textContent != ' ') {
+            letter.classList.add('is-changing');
+            letter.style.animationDuration = Math.random().toFixed(2) + 's';
+
+            var newChar = data.letters.substr(Math.random() * data.letters.length, 1);
+
+            letter.textContent = newChar;
+            letter.setAttribute('data-txt', newChar);
+        }
+    }
+
+    function resetLetter(letter, value) {
+        letter.classList.remove('is-changing');
+        letter.textContent = value;
+        letter.setAttribute('data-txt', value);
+    }
 
 
-  // divide le singole lettere delle stringhe e le wrappa in span
-  function divideLetters() {
+    // divide le singole lettere delle stringhe e le wrappa in span
+    function divideLetters() {
 
-      data.target.forEach( (element, index) => {
-          
-          var text = element.textContent;
-          var textDivided = '';
+        data.target.forEach((element, index) => {
 
-          data.originalStrings = text;
+            var text = element.textContent;
+            var textDivided = '';
 
-          for(var i = 0; i < text.length; i++) {
-              textDivided += `<span class="el-sp el-st-${index}-span-${i}" data-txt="${text.substr(i, 1)}">${text.substr(i, 1)}</span>`;
-          }
+            data.originalStrings = text;
 
-          element.innerHTML = textDivided;
-      }); 
-      data.singleLetters = document.querySelectorAll('.el-sp');
-  }
+            for (var i = 0; i < text.length; i++) {
+                textDivided += `<span class="el-sp el-st-${index}-span-${i}" data-txt="${text.substr(i, 1)}">${text.substr(i, 1)}</span>`;
+            }
 
-  // changes letters
-  function changeLetters() {
-      if(data.isScrolling) {
-          data.singleLetters.forEach(function(el, index){
-              changeLetter(el);
-          });
-      }
+            element.innerHTML = textDivided;
+        });
+        data.singleLetters = document.querySelectorAll('.el-sp');
+    }
 
-      setTimeout(changeLetters, 10);
-  }
+    // changes letters
+    function changeLetters() {
+        if (data.isScrolling) {
+            data.singleLetters.forEach(function (el, index) {
+                changeLetter(el);
+            });
+        }
 
-  // reset to initial letters
-  function resetLetters() {
+        setTimeout(changeLetters, 10);
+    }
 
-      var randomArray = [];  
-      for(var i = 0; i < data.singleLetters.length;i++) {
-          randomArray.push(i);
-      }
+    // reset to initial letters
+    function resetLetters() {
 
-      randomArray.shuffle();
+        var randomArray = [];
+        for (var i = 0; i < data.singleLetters.length; i++) {
+            randomArray.push(i);
+        }
 
-      randomArray.forEach(function(el, index){
+        randomArray.shuffle();
 
-          setTimeout(function(){
-              resetLetter(data.singleLetters[el], data.originalStrings.substring(el, el + 1));
-          }, (index * 20 * (Math.random() * 5))).toFixed(2);
-              
-      });
-  }
+        randomArray.forEach(function (el, index) {
 
-  // event listener sullo scroll
-  function updateScrollState() {
-      clearTimeout(delay);
-      data.isScrolling = true;
-      
-      var delay = setTimeout(function() {
-          data.isScrolling = false;
-          resetLetters();
-      }, 300);
-  };
+            setTimeout(function () {
+                resetLetter(data.singleLetters[el], data.originalStrings.substring(el, el + 1));
+            }, (index * 20 * (Math.random() * 5))).toFixed(2);
 
-  return {
-      init: function(selector){
+        });
+    }
 
-          // controllo che ci siano stringhe su cui agire
-          if(checkLength(selector)) {
+    // event listener sullo scroll
+    function updateScrollState() {
+        clearTimeout(delay);
+        data.isScrolling = true;
 
-              // salvo le stringhe
-              data.target = Array.from(document.querySelectorAll(selector));
-              
-              // divido le singole stringhe in lettere
-              divideLetters();
+        var delay = setTimeout(function () {
+            data.isScrolling = false;
+            resetLetters();
+        }, 300);
+    };
 
-              // lancio la funzione che si ripete
-              changeLetters();
+    return {
+        init: function (selector) {
 
-              // aggiungo il listener allo scroll
-              addListener('scroll', updateScrollState);
+            // controllo che ci siano stringhe su cui agire
+            if (checkLength(selector)) {
 
-          }
-      }
-  }
+                // salvo le stringhe
+                data.target = Array.from(document.querySelectorAll(selector));
+
+                // divido le singole stringhe in lettere
+                divideLetters();
+
+                // lancio la funzione che si ripete
+                changeLetters();
+
+                // aggiungo il listener allo scroll
+                addListener('scroll', updateScrollState);
+
+            }
+        }
+    }
 
 })();
 
 stringRandom.init('.el-st');
 
-//Navbar scroll effect
-
-let progress = document.getElementById('progressbar');
-let totalHeight = document.body.scrollHeight - window.innerHeight;
-window.onscroll = function(){
-    progressHeight = (window.pageYOffset / totalHeight) * 100;
-    progress.style.height = progressHeight + "%";
-}
+function Clipboard_CopyTo(value) {
+    var tempInput = document.createElement("input");
+    tempInput.value = value;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    alert('Copied email to clipboard')
+  }
+  
+  document.querySelector('#Copy').onclick = function() {
+    Clipboard_CopyTo('maciejkedziora98@gmail.com');
+  }
