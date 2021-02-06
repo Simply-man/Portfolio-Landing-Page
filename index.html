@@ -8,6 +8,7 @@
     <title>Portfolio Maciej Kędziora</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="/dist/cards.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -34,11 +35,11 @@
         <nav class="mobile">
             <img src="/images/name.png" class='logo'>
             <ul>
-                <li><a href="#HOME">Home</a></li>
-                <li class="green"><a href="#PROJECTS">Projects</a></li>
-                <li class="red"><a href="#SKILLS">Skills</a></li>
-                <li class="yellow"><a href="#ABOUT ME">About</a></li>
-                <li class="purple"><a href="#CONTACT">Contact</a></li>
+                <li><a id="saber" href="#HOME">Home</a></li>
+                <li class="green"><a id="saber" href="#PROJECTS">Projects</a></li>
+                <li class="red"><a id="saber" href="#SKILLS">Skills</a></li>
+                <li class="yellow"><a id="saber" href="#ABOUT ME">About</a></li>
+                <li class="purple"><a id="saber" href="#CONTACT">Contact</a></li>
             </ul>
         </nav>
         <section class="info">
@@ -54,44 +55,33 @@
                 <h1 class="el-st">{projects}</h1>
             </div>
         </div>
+        <div class="tab">
+            <button class="tablinks custom-btn btn-15" onclick="openCity(event, 'webdev')" id="defaultOpen">Web Dev</button>
+            <button class="tablinks custom-btn btn-15" onclick="openCity(event, 'microcontrollers')">Micro chip</button>
+          </div>
+        </div>
         <div class="projectcard">
-            <div class="page-content">
-                <div class="card">
+            <div class="page-content tabcontent" id="webdev">
+                <div class="cardweb">
                     <div class="content">
-                        <h2 class="title">Arduino</h2>
-                        <p class="copy">Weather Station with RTC and move detector</p>
-                        <a target="blank" href="https://github.com/Mac-lucky/Arduino-RTC-with-Temperature"><button
-                                class="btn">GitHub</button></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="content">
-                        <h2 class="title">Portfolio</h2>
-                        <p class="copy">Freelance project website with cooperation with a client</p>
+                        <h2 class="title">Restaurant Website</h2>
+                        <p class="copy">Fullstack website made for client, main technology React</p>
                         <div class="twobut">
-                            <a target="blank" href="https://github.com/Mac-lucky/UX-UI-site"><button
+                            <a target="blank" href="https://github.com/Mac-lucky/Fullstack-restaurant-site"><button
                                     class="btn">GitHub</button></a>
-                            <a target="blank" href="https://wsawicka.com"><button class="btn">Demo</button></a>
+                            <a target="blank" href="https://tutajlepsze.pl/"><button
+                                    class="btn">Demo</button></a>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="cardweb">
                     <div class="content">
                         <h2 class="title">Database</h2>
                         <p class="copy">Python program to view updated daily COVID-19 cases stored in SQLite3 database</p><a target="blank"
                             href="https://github.com/Mac-lucky/COVID-19-daily-database-with-SQLite3"><button class="btn">GitHub</button></a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="content">
-                        <h2 class="title">FPGA</h2>
-                        <p class="copy">Project made in Vivado using VHDL programmed to be used on Spartan 6</p><a
-                            target="blank"
-                            href="https://github.com/Mac-lucky/Vivado-VHDL-RTC-using-I2C-Master-Slave"><button
-                                class="btn">GitHub</button></a>
-                    </div>
-                </div>
-                <div class="card">
+                <div class="cardweb">
                     <div class="content">
                         <h2 class="title">Mapping</h2>
                         <p class="copy">Page that was based on mockups, that I tried to recreate as website</p>
@@ -103,11 +93,56 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="cardweb">
+                    <div class="content">
+                        <h2 class="title">Portfolio</h2>
+                        <p class="copy">Freelance project website with cooperation with a client</p>
+                        <div class="twobut">
+                            <a target="blank" href="https://github.com/Mac-lucky/UX-UI-site"><button
+                                    class="btn">GitHub</button></a>
+                            <a target="blank" href="https://wsawicka.com"><button class="btn">Demo</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardweb">
+                    <div class="content">
+                        <h2 class="title">Mali-Wspaniali</h2>
+                        <p class="copy">Project in CodersCrew for a company to store sports performance of children and alert parents, how their child is developing. Worked as FrontEnd</p><a target="blank"
+                            href="http://mali-wspaniali.pl/pl/index.html"><button class="btn">Company website</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content tabcontent" id="microcontrollers">
+                <div class="cardmicro">
+                    <div class="content">
+                        <h2 class="title">Arduino</h2>
+                        <p class="copy">Weather Station with RTC and move detector</p>
+                        <a target="blank" href="https://github.com/Mac-lucky/Arduino-RTC-with-Temperature"><button
+                                class="btn">GitHub</button></a>
+                    </div>
+                </div>
+                <div class="cardmicro">
+                    <div class="content">
+                        <h2 class="title">FPGA</h2>
+                        <p class="copy">Project made in Vivado using VHDL programmed to be used on Spartan 6</p><a
+                            target="blank"
+                            href="https://github.com/Mac-lucky/Vivado-VHDL-RTC-using-I2C-Master-Slave"><button
+                                class="btn">GitHub</button></a>
+                    </div>
+                </div>
+                <div class="cardmicro">
                     <div class="content">
                         <h2 class="title">STM32 ARM</h2>
                         <p class="copy">ARM Cortex-M3 with ultrasonic range detector and LCD</p><a target="blank"
                             href="https://github.com/Mac-lucky/STM32-HC-SR04-USART-timer-pulse-width"><button
+                                class="btn">GitHub</button></a>
+                    </div>
+                </div>
+                <div class="cardmicro">
+                    <div class="content">
+                        <h2 class="title">Database manager</h2>
+                        <p class="copy">Qt Designer GUI program to view, change search positions in SQL</p><a target="blank"
+                            href="https://github.com/Mac-lucky/DatabaseManager"><button
                                 class="btn">GitHub</button></a>
                     </div>
                 </div>
@@ -139,6 +174,10 @@
                 <h1 data-aos="fade-down">VHDL, Matlab</h1>
                 <img data-aos="fade-up" src="/images/red.png">
             </div>
+            <div class="left">
+                <h1 data-aos="fade-down">MDBootstrap, MaterialUI</h1>
+                <img data-aos="fade-up" src="/images/violet.png">
+            </div>
         </div>
     </section>
     <section id="ABOUT ME" class="aboutme">
@@ -153,16 +192,20 @@
                         <b>Microsystems</b> and Photonics
                         at Wrocław University of Science and Technology. My specialization is <b>Digital
                             Electronics</b>.
-                        During my studies, I was <b>working</b> on databases, FPGAs, ARM and AVR microprocessors.</p>
+                        During my studies, I was working on databases, FPGAs, ARM and AVR microprocessors.</p>
                     <p data-aos="fade-up" data-aos-delay="70">I’m really into <b>web programming</b> and that's why
                         I joined to CodersCrew - non-profit
-                        organization operating in Wrocław. There I can work on <b>real-life</b> projects and learn from
+                        organization operating in Wrocław. There I can work on real-life projects and learn from
                         more
                         experienced people.</p>
                     <p data-aos="fade-up" data-aos-delay="70">I am a technology lover, I am eager to discover and
-                        learn new things, and I <b>pursue my
-                            goals</b> with great persistence.
+                        learn new things, and I pursue my
+                            goals with great persistence.
                     </p>
+                    <div class="resume">
+                        <a href="/Resume/maciejkedziora_CV_PL.pdf" target="_blank"><span>RESUME PL</span></a>
+                        <a href="/Resume/maciejkedziora_CV_ENG.pdf" target="_blank"><span>RESUME EN</span></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,10 +225,12 @@
                         <p>Click Me</p>
                     </div>
                 </a>
+                <a href="tel:665622435">
                 <div id="delay" data-aos="zoom-out" data-aos-delay="100" class="icontext">
                     <i class="fas fa-phone-alt"></i>
                     <p>665 622 435</p>
                 </div>
+                </a>
                 <a href="https://github.com/Mac-lucky" target="blank">
                     <div id="delay" data-aos="zoom-out" data-aos-delay="150" class="icontext">
                         <i class="fab fa-github"></i>

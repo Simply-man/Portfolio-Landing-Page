@@ -1,16 +1,17 @@
 const burger = document.getElementById("burger");
+const saber = document.getElementById("saber");
 const nav = document.querySelector(".mobile");
 const body = document.querySelector("body");
+const active = document.getElementsByClassName("active");
+const show = document.getElementsByClassName("show");
+
+
 
 function handleClick(e) {
-  this.classList.toggle("active");
+  burger.classList.toggle("active");
   nav.classList.toggle("show");
-
-  if (this.classList.contains("active")) {
-    body.style.overflow = "hidden";
-  } else {
-    body.style.overflow = "auto";
-  }
 }
 
+
 burger.addEventListener("click", handleClick);
+saber.addEventListener("click", handleClick);

@@ -244,7 +244,7 @@ nav ul li a {
   }
 }
 
-.card {
+.cardweb {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -257,11 +257,11 @@ nav ul li a {
   box-shadow: 0px 0px 40px cyan;
 }
 @media (min-width: 600px) {
-  .card {
+  .cardweb {
     height: 350px;
   }
 }
-.card:before {
+.cardweb:before {
   content: "";
   position: absolute;
   top: 0;
@@ -274,7 +274,7 @@ nav ul li a {
   transition: transform calc(var(--d) * 1.5) var(--e);
   pointer-events: none;
 }
-.card:after {
+.cardweb:after {
   content: "";
   display: block;
   position: absolute;
@@ -287,22 +287,22 @@ nav ul li a {
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
-.card:nth-child(1):before {
-  background-image: url(/images/arduino.jpg);
+.cardweb:nth-child(1):before {
+  background-image: url(/images/piero.png);
 }
-.card:nth-child(2):before {
-  background-image: url(/images/music.png);
-}
-.card:nth-child(3):before {
+.cardweb:nth-child(2):before {
   background-image: url(/images/covid.png);
 }
-.card:nth-child(4):before {
-  background-image: url(/images/spartan.jpg);
-}
-.card:nth-child(5):before {
+.cardweb:nth-child(3):before {
   background-image: url(/images/designpage.png);
 }
-.card:nth-child(6):before {
+.cardweb:nth-child(4):before {
+  background-image: url(/images/music.png);
+}
+.cardweb:nth-child(5):before {
+  background-image: url(/images/maliwspaniali.png);
+}
+.cardweb:nth-child(6):before {
   background-image: url(/images/ARM.jpg);
 }
 
@@ -358,7 +358,7 @@ nav ul li a {
     padding: 0 !important;
   }
 
-  .card:after {
+  .cardweb:after {
     transform: translateY(0);
   }
 
@@ -371,32 +371,32 @@ nav ul li a {
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
   }
 
-  .card:hover,
-.card:focus-within {
+  .cardweb:hover,
+.cardweb:focus-within {
     align-items: center;
   }
-  .card:hover:before,
-.card:focus-within:before {
+  .cardweb:hover:before,
+.cardweb:focus-within:before {
     transform: translateY(-4%);
   }
-  .card:hover:after,
-.card:focus-within:after {
+  .cardweb:hover:after,
+.cardweb:focus-within:after {
     transform: translateY(-50%);
   }
-  .card:hover .content,
-.card:focus-within .content {
+  .cardweb:hover .content,
+.cardweb:focus-within .content {
     transform: translateY(0);
   }
-  .card:hover .content > *:not(.title),
-.card:focus-within .content > *:not(.title) {
+  .cardweb:hover .content > *:not(.title),
+.cardweb:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
   }
 
-  .card:focus-within:before, .card:focus-within:after,
-.card:focus-within .content,
-.card:focus-within .content > *:not(.title) {
+  .cardweb:focus-within:before, .cardweb:focus-within:after,
+.cardweb:focus-within .content,
+.cardweb:focus-within .content > *:not(.title) {
     transition-duration: 0s;
   }
 }
@@ -469,7 +469,7 @@ nav ul li a {
   }
   #burger:hover .filling:before {
     background: #efe;
-    box-shadow: #0f0 0px 0px 10px 1px;
+    box-shadow: #f5c708 0px 0px 10px 1px;
   }
   #burger .bun.top {
     top: 25%;
@@ -711,8 +711,8 @@ nav ul li a {
 
   .txt {
     letter-spacing: 1rem;
-    font-size: 85px;
-    margin-right: 0;
+    font-size: 78px;
+    padding-right: 9px;
   }
 
   .left {
@@ -789,6 +789,11 @@ nav ul li a {
   .icons {
     width: 90% !important;
     margin: auto;
+  }
+
+  .btn-15 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
   }
 }
 .right {
@@ -946,4 +951,164 @@ nav ul li a {
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+}
+
+.resume a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #f5c708;
+  margin: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.resume a:hover {
+  transition-delay: 1.5s;
+  color: #000;
+  box-shadow: 0 0 10px #f5c708, 0 0 20px #f5c708, 0 0 40px #f5c708, 0 0 80px #f5c708, 0 0 160px #f5c708;
+}
+
+.resume a:nth-child(2) {
+  filter: hue-rotate(80deg);
+}
+
+.resume a::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #f5c708;
+  box-shadow: 5px -8px 0 #f5c708, 5px 8px 0 #f5c708;
+  transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+  transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.resume a:hover::before {
+  width: 60%;
+  height: 100%;
+  left: -2px;
+  box-shadow: 5px 0 0 #f5c708, 5px 0 0 #f5c708;
+  transition-delay: 0s, 0s, 1s, 1s;
+}
+
+.resume a::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #f5c708;
+  box-shadow: -5px -8px 0 #f5c708, -5px 8px 0 #f5c708;
+  transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+  transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.resume a:hover::after {
+  width: 60%;
+  height: 100%;
+  right: -2px;
+  box-shadow: -5px 0 0 #f5c708, -5px 0 0 #f5c708;
+  transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.resume a span {
+  position: relative;
+  z-index: 4;
+  font-family: Poppins;
+}
+
+/* Style the tab */
+.tab {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-bottom: 3rem;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  animation: fadeEffect 1s;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.custom-btn {
+  color: #fff;
+  width: 170px;
+  height: 60px;
+  font-size: 1rem;
+  padding: 10px 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-15 {
+  color: #f5c708;
+  border: 1px solid #f5c708;
+  box-shadow: 0 0 5px #f5c708, 0 0 5px #f5c708 inset;
+  z-index: 1;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #f5c708;
+  box-shadow: 0 0 20px #f5c708;
+  transition: all 0.3s ease;
+}
+
+.btn-15:hover {
+  color: #fff;
+}
+
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.btn-15.active {
+  top: 2px;
+  background: #f5c708;
+  box-shadow: 0 0 20px #f5c708;
+  z-index: 1;
+  color: #fff;
 }

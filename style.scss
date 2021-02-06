@@ -276,7 +276,7 @@ $bp-elg: 1150px;
 }
 
 
-.card {
+.cardweb {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -338,23 +338,23 @@ $bp-elg: 1150px;
   }
 
   &:nth-child(1):before {
-    background-image: url(/images/arduino.jpg);
+    background-image: url(/images/piero.png);
   }
 
   &:nth-child(2):before {
-    background-image: url(/images/music.png);
-  }
-
-  &:nth-child(3):before {
     background-image: url(/images/covid.png);
   }
 
+  &:nth-child(3):before {
+    background-image: url(/images/designpage.png);
+  }
+
   &:nth-child(4):before {
-    background-image: url(/images/spartan.jpg);
+    background-image: url(/images/music.png);
   }
 
   &:nth-child(5):before {
-    background-image: url(/images/designpage.png);
+    background-image: url(/images/maliwspaniali.png);
   }
 
   &:nth-child(6):before {
@@ -418,7 +418,7 @@ $bp-elg: 1150px;
     padding: 0 !important;
   }
 
-  .card:after {
+  .cardweb:after {
     transform: translateY(0);
   }
 
@@ -434,8 +434,8 @@ $bp-elg: 1150px;
     }
   }
 
-  .card:hover,
-  .card:focus-within {
+  .cardweb:hover,
+  .cardweb:focus-within {
     align-items: center;
 
     &:before {
@@ -457,7 +457,7 @@ $bp-elg: 1150px;
     }
   }
 
-  .card:focus-within {
+  .cardweb:focus-within {
 
     &:before,
     &:after,
@@ -554,7 +554,7 @@ $bp-mobile:800px;
       .filling {
         &:before {
           background: #efe;
-          box-shadow: #0f0 0px 0px 10px 1px;
+          box-shadow: #f5c708 0px 0px 10px 1px;
         }
       }
     }
@@ -814,8 +814,8 @@ $bp-mobile:800px;
 
   .txt {
     letter-spacing: 1rem;
-    font-size: 85px;
-    margin-right: 0;
+    font-size: 78px;
+    padding-right: 9px;
   }
 
   .left {
@@ -850,7 +850,7 @@ $bp-mobile:800px;
     padding-left: 0px !important;
   }
 
-  .imageover img{
+  .imageover img {
     max-width: 100%;
   }
 
@@ -863,21 +863,21 @@ $bp-mobile:800px;
     display: block !important;
   }
 
-  .contact h1{
+  .contact h1 {
     text-align: center;
   }
 
-  .icons{
+  .icons {
     display: block !important;
   }
 
-  .icontext{
+  .icontext {
     padding-bottom: 2rem;
     display: flex;
-    align-items:center;
+    align-items: center;
   }
 
-  .icontext p{
+  .icontext p {
     margin-top: -1rem;
     padding-left: 4rem;
   }
@@ -889,11 +889,16 @@ $bp-mobile:800px;
     font-size: 60px !important;
   }
 
-  .icons{
+  .icons {
     width: 90% !important;
     margin: auto;
   }
-  
+
+  .btn-15 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
 }
 
 .right {
@@ -982,7 +987,7 @@ $bp-mobile:800px;
   align-items: center;
 }
 
-.abouttext p{
+.abouttext p {
   padding-top: 3rem;
 }
 
@@ -1015,7 +1020,7 @@ $bp-mobile:800px;
 
 .icons {
   padding-top: 5rem;
-  display:flex;
+  display: flex;
   text-align: center;
   width: 80%;
   margin: auto;
@@ -1049,14 +1054,184 @@ $bp-mobile:800px;
   text-shadow: 0 0 10px #ffee10;
 }
 
-.bottomtext{
+.bottomtext {
   padding-top: 15rem;
   text-align: center;
   font-size: 16px;
 }
 
-.twobut{
+.twobut {
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+}
+
+.resume a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #f5c708;
+  margin: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.resume a:hover {
+  transition-delay: 1.5s;
+  color: #000;
+  box-shadow: 0 0 10px #f5c708,
+    0 0 20px #f5c708,
+    0 0 40px #f5c708,
+    0 0 80px #f5c708,
+    0 0 160px #f5c708;
+}
+
+.resume a:nth-child(2) {
+  filter: hue-rotate(80deg);
+}
+
+.resume a::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #f5c708;
+  box-shadow: 5px -8px 0 #f5c708, 5px 8px 0 #f5c708;
+  transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+  transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.resume a:hover::before {
+  width: 60%;
+  height: 100%;
+  left: -2px;
+  box-shadow: 5px 0 0 #f5c708, 5px 0 0 #f5c708;
+  transition-delay: 0s, 0s, 1s, 1s;
+}
+
+
+.resume a::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #f5c708;
+  box-shadow: -5px -8px 0 #f5c708, -5px 8px 0 #f5c708;
+  transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+  transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.resume a:hover::after {
+  width: 60%;
+  height: 100%;
+  right: -2px;
+  box-shadow: -5px 0 0 #f5c708, -5px 0 0 #f5c708;
+  transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.resume a span {
+  position: relative;
+  z-index: 4;
+  font-family: Poppins;
+}
+
+/* Style the tab */
+.tab {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-bottom: 3rem;
+}
+
+
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  animation: fadeEffect 1s;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.custom-btn {
+  color: #fff;
+  width: 170px;
+  height: 60px;
+  font-size: 1rem;
+  padding: 10px 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-15 {
+  color: rgb(245, 199, 8);
+  border: 1px solid rgb(245, 199, 8);
+  box-shadow: 0 0 5px rgb(245, 199, 8), 0 0 5px rgb(245, 199, 8) inset;
+  z-index: 1;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: rgb(245, 199, 8);
+  box-shadow:
+    0 0 20px rgb(245, 199, 8);
+  transition: all 0.3s ease;
+}
+
+.btn-15:hover {
+  color: #fff;
+}
+
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.btn-15.active {
+  top: 2px;
+  background: rgb(245, 199, 8);
+  box-shadow: 0 0 20px rgb(245, 199, 8);
+  z-index: 1;
+  color: #fff;
 }
